@@ -75,7 +75,12 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 GDPR = []
- 
+
+START_IMG = os.environ.get('START_IMG', None)
+if START_IMG is None:
+    img = "https://telegra.ph/file/d2da369213d3e496c4282.jpg"
+else:
+  img = START_IMG 
     
 for module_name in ALL_MODULES:
     imported_module = importlib.import_module("JisooX.modules." + module_name)
